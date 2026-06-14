@@ -2376,8 +2376,8 @@ function renderTaxa(TAXA_DATA) {
     const ordId   = "ord_" + slugify(ord.o || "");
     const ordName = lang === 'de' ? (ORDER_DE[ord.o] || ord.o || "—") : ord.o || "—";
     const ordSub  = lang === 'de' ? ord.o : (ORDER_DE[ord.o] || "");
-    html += `<h2 data-toggle="${ordId}">${ordName}${ordSub ? ` <small style="font-weight:400;opacity:.5;font-size:.75em;">${ordSub}</small>` : ""}<span class="acc-arrow">▼</span></h2>`;
-    html += `<div id="${ordId}" style="display:none;">`;
+    html += `<h2 data-toggle="${ordId}">${ordName}${ordSub ? ` <small style="font-weight:400;opacity:.5;font-size:.75em;">${ordSub}</small>` : ""}<span class="acc-arrow open">▼</span></h2>`;
+    html += `<div id="${ordId}">`;
 
     (ord.f || []).forEach(fam => {
       const famId   = "fam_" + slugify((ord.o||"") + "_" + (fam.f || ""));
